@@ -65,7 +65,7 @@ function NavBar() {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h5" style={{ flexGrow: 1 }}>
-            Material UI
+            Portfolio
           </Typography>
           <div className={classes.sectionDesktop}>
             <Button color="inherit" component={Link} to="/">
