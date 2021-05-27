@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
 
+.body {
+    overflow: hidden;
+}
 
 .links {
   text-align: center;
@@ -129,7 +132,25 @@
 	100% { transform: translate(0, -0px); }	
 }
 
+.aboutPic {
+  margin-right: 100px;
+  margin-top: 0px;
+  width: 700px;
+  height: 300px;
+}
 
+.aboutPic {
+	animation-name: floating;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+	0% { transform: translate(0, 0px); }
+	50% { transform: translate(0, 15px); }
+	100% { transform: translate(0, -0px); }	
+}
 
 @media screen and (max-width: 770px) {
     #container {
@@ -141,10 +162,21 @@
     #content {
         width: 100%;
     }
-    #homePic {
+    #head1 {
+        font-size: 20px;
+    }
+
+    .homePic  {
         margin: 0;
         width: 100%;
         height: 100%;
+    }
+
+    .aboutPic {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        margin-top: 40px;
     }
   }
   
