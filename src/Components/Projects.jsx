@@ -1,11 +1,12 @@
 import React from 'react';
+import {Box, Typography} from '@material-ui/core';
 
 
 function Projects () {
     return (
-        <div>
-            <h1>Welcome to Projects</h1>
-        </div>
+        <Box>
+            <Typography variant="h1">Welcome to Projects</Typography>
+        </Box>
     )
 }
 

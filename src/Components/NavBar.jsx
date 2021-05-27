@@ -1,43 +1,94 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import '../App.css'
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import {
+  Container,
+  Typography,
+  AppBar,
+  Toolbar,
+  Button,
+  IconButton,
+  Menu,
+  MenuItem,
+} from "@material-ui/core";
+import MenuIcon from "@material-ui/icons/Menu";
+import { makeStyles } from "@material-ui/core/styles";
+import "../App.css";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
-  },
-  heading: {
-      fontSize: 25,
-      marginLeft: 30,
+  sectionDesktop: {
+    display: "none",
+    [theme.breakpoints.up("md")]: {
+      display: "flex",
+    },
   },
 }));
 
-export default function ButtonAppBar() {
+function NavBar() {
   const classes = useStyles();
+  const [mobileMenuEl, setmobileMenuEl] = useState(null);
+  const ismobileMenuOpen = Boolean(mobileMenuEl);
+  
+  const openMobileMenu = (event) => {
+      setmobileMenuEl(event.currentTarget)
+  }
+
+  const closeMobileMenu = () => {
+      setmobileMenuEl(null)
+}
+
+  
+
+  const mobileMenu = (
+    <Menu
+      anchorEl={mobileMenuEl}
+      id="mobile-menu"
+      keepMounted
+      open={ismobileMenuOpen}
+    >
+      <MenuItem component={Link} onClick={closeMobileMenu} to="/">
+        Home
+      </MenuItem>
+      <MenuItem component={Link} onClick={closeMobileMenu} to="/about">
+        About
+      </MenuItem>
+      <MenuItem component={Link} onClick={closeMobileMenu} to="/projects">
+        Projects
+      </MenuItem>
+      <MenuItem component={Link} onClick={closeMobileMenu} to="/contact">
+        Contact
+      </MenuItem>
+    </Menu>
+  );
 
   return (
-    <div className={classes.root}>
+    <Container disableGutters={true} maxWidth="xl">
       <AppBar position="static">
         <Toolbar>
-         <Typography variant="h6" className="heading" className={classes.heading}>Portfolio</Typography>
-         <ul className="lists">
-          <li className="list"><Link to="/" className="links">Home</Link></li>
-          <li className="list"><Link to="/about" className="links">About</Link></li>
-          <li className="list"><Link to="/projects" className="links">Projects</Link></li>
-          <li className="list"><Link to="/contact" className="links">Contact Us</Link></li>
-        </ul>
+          <Typography variant="h5" style={{ flexGrow: 1 }}>
+            Material UI
+          </Typography>
+          <div className={classes.sectionDesktop}>
+            <Button color="inherit" component={Link} to="/">
+              Home
+            </Button>
+            <Button color="inherit" component={Link} to="/about">
+              About
+            </Button>
+            <Button color="inherit" component={Link} to="/projects">
+              Projects
+            </Button>
+            <Button color="inherit" component={Link} to="/contact">
+              Contact
+            </Button>
+          </div>
+          <IconButton color="inherit" onClick={openMobileMenu}>
+            <MenuIcon />
+          </IconButton>
         </Toolbar>
       </AppBar>
-    </div>
+      {mobileMenu}
+    </Container>
   );
 }
+
+export default NavBar;
