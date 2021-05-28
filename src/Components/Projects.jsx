@@ -5,7 +5,7 @@ import {Box, Typography} from '@material-ui/core';
 function Projects () {
     return (
         <Box>
-            <Typography variant="h1">Welcome to Projects</Typography>
+            <Typography variant="h1">Welcome to Portfolio</Typography>
         </Box>
     )
 }
