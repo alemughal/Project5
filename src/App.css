@@ -4,33 +4,6 @@
     overflow: hidden;
 }
 
-.links {
-  text-align: center;
-  text-decoration: none;
-  color: white;
-  padding: 10px;
-  font-weight: 500px;
-  font-size: larger;
-}
-
-.lists {
-  list-style-type: none;
-  display: inline-block;
-  margin-left: 900px;
-}
-
-.list {
-  text-align: center;
-  display: inline;
-  align-items: left;
-}
-
-@media screen and (max-width: 770px) {
-  .lists {
-    margin-left: 0;
-  }
-}
-
 #container {
   margin-top: 250px;
   margin-left: 160px;

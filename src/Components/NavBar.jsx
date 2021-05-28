@@ -9,6 +9,7 @@ import {
   IconButton,
   Menu,
   MenuItem,
+  Hidden,
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import { makeStyles } from "@material-ui/core/styles";
@@ -20,6 +21,12 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("md")]: {
       display: "flex",
     },
+    menuIcon: {
+      display: "none",
+      [theme.breakpoints.up("sm")]: {
+        display: "none",
+      },
+    },
   },
 }));
 
@@ -27,16 +34,14 @@ function NavBar() {
   const classes = useStyles();
   const [mobileMenuEl, setmobileMenuEl] = useState(null);
   const ismobileMenuOpen = Boolean(mobileMenuEl);
-  
+
   const openMobileMenu = (event) => {
-      setmobileMenuEl(event.currentTarget)
-  }
+    setmobileMenuEl(event.currentTarget);
+  };
 
   const closeMobileMenu = () => {
-      setmobileMenuEl(null)
-}
-
-  
+    setmobileMenuEl(null);
+  };
 
   const mobileMenu = (
     <Menu
@@ -68,22 +73,26 @@ function NavBar() {
             Portfolio
           </Typography>
           <div className={classes.sectionDesktop}>
-            <Button color="inherit" component={Link} to="/">
-              Home
-            </Button>
-            <Button color="inherit" component={Link} to="/about">
-              About
-            </Button>
-            <Button color="inherit" component={Link} to="/projects">
-              Projects
-            </Button>
-            <Button color="inherit" component={Link} to="/contact">
-              Contact
-            </Button>
+            <ul>
+              <Button color="inherit" component={Link} to="/">
+                Home
+              </Button>
+              <Button color="inherit" component={Link} to="/about">
+                About
+              </Button>
+              <Button color="inherit" component={Link} to="/projects">
+                Projects
+              </Button>
+              <Button color="inherit" component={Link} to="/contact">
+                Contact
+              </Button>
+            </ul>
           </div>
-          <IconButton color="inherit" onClick={openMobileMenu}>
-            <MenuIcon />
-          </IconButton>
+          <Hidden only={["lg", "md"]}>
+            <IconButton color="inherit" onClick={openMobileMenu} only="xl">
+              <MenuIcon />
+            </IconButton>
+          </Hidden>
         </Toolbar>
       </AppBar>
       {mobileMenu}
