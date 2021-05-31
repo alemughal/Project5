@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap");
 
 .body {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 #container {
@@ -22,7 +22,7 @@
   }
   100% {
     transform: translateY(-25px);
-  }  
+  }
 }
 
 @keyframes up-down {
@@ -31,51 +31,56 @@
   }
   100% {
     transform: translateY(-25px);
-  }  
+  }
 }
 
 #head1 {
-    font-family: 'Noto Sans JP', sans-serif;
-    font-size: 30px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 30px;
 }
 
 #head1 {
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid black; /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: .15em; /* Adjust as needed */
-    animation: 
-      typing 3.5s steps(40, end),
-      blink-caret .75s step-end infinite;
-  }
-  
-  /* The typing effect */
-  @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-  }
-  
-  /* The typewriter cursor effect */
-  @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: black; }
-  }
-  
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid black; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.15em; /* Adjust as needed */
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
 
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: black;
+  }
+}
 
 #brandName {
-    color: #3498db;
+  color: #3498db;
 }
 
 #head2 {
-    padding-top: 0;
+  padding-top: 0;
 }
 
 #head3 {
-    font-size: 15px;
-    font-weight: 400;
-    color: black;
+  font-size: 15px;
+  font-weight: 400;
+  color: black;
 }
 
 #content {
@@ -93,16 +98,22 @@
 }
 
 .homePic {
-	animation-name: floating;
-	animation-duration: 3s;
-	animation-iteration-count: infinite;
-	animation-timing-function: ease-in-out;
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
 }
 
 @keyframes floating {
-	0% { transform: translate(0, 0px); }
-	50% { transform: translate(0, 15px); }
-	100% { transform: translate(0, -0px); }	
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 15px);
+  }
+  100% {
+    transform: translate(0, -0px);
+  }
 }
 
 .aboutPic {
@@ -113,43 +124,114 @@
 }
 
 .aboutPic {
-	animation-name: floating;
-	animation-duration: 3s;
-	animation-iteration-count: infinite;
-	animation-timing-function: ease-in-out;
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
 }
 
 @keyframes floating {
-	0% { transform: translate(0, 0px); }
-	50% { transform: translate(0, 15px); }
-	100% { transform: translate(0, -0px); }	
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 15px);
+  }
+  100% {
+    transform: translate(0, -0px);
+  }
 }
 
 @media screen and (max-width: 770px) {
-    #container {
-        margin-top: 50px;
-        margin-left: 10px;
-        display: block;
-        align-items: center;
-    }
-    #content {
-        width: 100%;
-    }
-    #head1 {
-        font-size: 20px;
-    }
-
-    .homePic  {
-        margin: 0;
-        width: 100%;
-        height: 100%;
-    }
-
-    .aboutPic {
-        margin: 0;
-        width: 100%;
-        height: 100%;
-        margin-top: 40px;
-    }
+  #container {
+    margin-top: 50px;
+    margin-left: 10px;
+    display: block;
+    align-items: center;
   }
-  
+  #content {
+    width: 100%;
+  }
+  #head1 {
+    font-size: 20px;
+  }
+
+  .homePic {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .aboutPic {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    margin-top: 40px;
+  }
+}
+
+/* Cards */
+
+.card {
+  background: rgb(255, 255, 255);
+  border-radius: 3px;
+  display: inline-block;
+  height: 350px;
+  margin: 50px 100px;
+  position: relative;
+  width: 350px;
+  overflow: hidden;
+}
+
+.card .top {
+  display: inline-flex;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.card .top img {
+  height: 220px;
+  width: 100%;
+}
+
+
+.card .bottom {
+  height: 80px;
+  width: 100%;
+}
+
+.card .bottom p {
+  text-align: left;
+  height: 80px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #444;
+  font-size: 18px;
+  font-family: Roboto, sans-serif;
+}
+
+.card-1 {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.card-1:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 770px) {
+  .card {
+    margin: 1rem;
+    width: 300px;
+    margin-left: 25px;
+  }
+}
