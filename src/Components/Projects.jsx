@@ -73,8 +73,6 @@ function Projects() {
           </Box>
         </div>
       </div>
->>>>>>> Stashed changes
-
       <div class="card card-1">
         <div class="top">
           <img src={Project4} alt="queenRace" />
@@ -101,7 +99,7 @@ function Projects() {
           <img src={Project5} alt="animations" />
         </div>
         <div class="bottom">
-          <p>Animated Web Page</p>
+          <p>Animated Web Page.</p>
           <Box textAlign="center">
             <Button
               variant="contained"
