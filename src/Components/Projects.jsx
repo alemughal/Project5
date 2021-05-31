@@ -5,11 +5,19 @@ import Project2 from "../Images/project2.png";
 import Project3 from "../Images/project3.png";
 import Project4 from "../Images/project4.png";
 import Project5 from "../Images/project4b.png";
+import useWebAnimations, {
+  lightSpeedInLeft,
+} from "@wellyshen/use-web-animations";
 
 function Projects() {
+  const { ref: card1 } = useWebAnimations({ ...lightSpeedInLeft });
+  const { ref: card2 } = useWebAnimations({ ...lightSpeedInLeft });
+  const { ref: card3 } = useWebAnimations({ ...lightSpeedInLeft });
+  const { ref: card4 } = useWebAnimations({ ...lightSpeedInLeft });
+  const { ref: card5 } = useWebAnimations({ ...lightSpeedInLeft });
   return (
     <div>
-      <div class="card card-1">
+      <div class="card card-1" ref={card1}>
         <div class="top">
           <img src={Project1} alt="expense" />
         </div>
@@ -30,7 +38,7 @@ function Projects() {
           </Box>
         </div>
       </div>
-      <div class="card card-1">
+      <div class="card card-1" ref={card2}>
         <div class="top">
           <img src={Project2} alt="covidTracker" />
         </div>
@@ -52,7 +60,7 @@ function Projects() {
         </div>
       </div>
 
-      <div class="card card-1">
+      <div class="card card-1" ref={card3}>
         <div class="top">
           <img src={Project3} alt="shoeStore" />
         </div>
@@ -73,7 +81,7 @@ function Projects() {
           </Box>
         </div>
       </div>
-      <div class="card card-1">
+      <div class="card card-1" ref={card4}>
         <div class="top">
           <img src={Project4} alt="queenRace" />
         </div>
@@ -94,7 +102,7 @@ function Projects() {
           </Box>
         </div>
       </div>
-      <div class="card card-1">
+      <div class="card card-1" ref={card5}>
         <div class="top">
           <img src={Project5} alt="animations" />
         </div>
